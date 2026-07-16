@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 
-import Login from "../pages/Login/Login";
 import Dashboard from "../pages/Admin/Dashboad";
 import Students from "../pages/Admin/Student";
 
@@ -11,9 +10,10 @@ const ComingSoon = ({ title }) => (
 export default function AppRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<Login />} />
+      {/* <Route path="/" element={<Login />} /> */}
 
-      <Route path="/admin/dashboard" element={<Dashboard />} />
+      {/* <Route path="/admin/dashboard" element={<Dashboard />} /> */}
+        <Route path="/" element={<Dashboard />} />
       <Route path="/admin/students" element={<Students />} />
 
       <Route
