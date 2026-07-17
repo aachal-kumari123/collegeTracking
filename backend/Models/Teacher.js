@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const teacherSchema = new mongoose.Schema(
   {
-    employeeId: {
+    teacherId: {
       type: String,
       required: true,
       unique: true,
@@ -31,7 +31,7 @@ const teacherSchema = new mongoose.Schema(
 
     designation: {
       type: String,
-      default: "Assistant Professor",
+      required: true,
     },
   },
   {

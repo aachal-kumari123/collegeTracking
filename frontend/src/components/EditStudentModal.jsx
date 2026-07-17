@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
-
+import toast from "react-hot-toast";
 export default function EditStudentModal({
   isOpen,
   onClose,
@@ -46,13 +46,12 @@ export default function EditStudentModal({
     try {
       await api.put(`/students/${student._id}`, formData);
 
-      alert("Student Updated Successfully");
-
+    toast.success("Student Updated Successfully");
       onStudentUpdated();
       onClose();
     } catch (error) {
       console.error(error);
-      alert("Update Failed");
+     toast.error("Update Failed");
     }
   };
 

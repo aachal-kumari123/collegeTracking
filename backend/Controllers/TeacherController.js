@@ -11,6 +11,8 @@ exports.addTeacher = async (req, res) => {
       teacher,
     });
   } catch (error) {
+    console.error(error);
+
     res.status(500).json({
       success: false,
       message: error.message,
@@ -28,6 +30,8 @@ exports.getTeachers = async (req, res) => {
       teachers,
     });
   } catch (error) {
+    console.error(error);
+
     res.status(500).json({
       success: false,
       message: error.message,
@@ -52,6 +56,8 @@ exports.getTeacherById = async (req, res) => {
       teacher,
     });
   } catch (error) {
+    console.error(error);
+
     res.status(500).json({
       success: false,
       message: error.message,
@@ -65,7 +71,10 @@ exports.updateTeacher = async (req, res) => {
     const teacher = await Teacher.findByIdAndUpdate(
       req.params.id,
       req.body,
-      { new: true }
+      {
+        new: true,
+        runValidators: true,
+      }
     );
 
     res.status(200).json({
@@ -74,6 +83,8 @@ exports.updateTeacher = async (req, res) => {
       teacher,
     });
   } catch (error) {
+    console.error(error);
+
     res.status(500).json({
       success: false,
       message: error.message,
@@ -91,6 +102,8 @@ exports.deleteTeacher = async (req, res) => {
       message: "Teacher Deleted Successfully",
     });
   } catch (error) {
+    console.error(error);
+
     res.status(500).json({
       success: false,
       message: error.message,

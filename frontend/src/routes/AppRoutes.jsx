@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Dashboard from "../pages/Admin/Dashboad";
 import Students from "../pages/Admin/Student";
+import Teachers from "../pages/Admin/Teacher";
 
 const ComingSoon = ({ title }) => (
   <h1 className="text-3xl font-bold p-6">{title} Page</h1>
@@ -15,6 +16,7 @@ export default function AppRoutes() {
       {/* <Route path="/admin/dashboard" element={<Dashboard />} /> */}
         <Route path="/" element={<Dashboard />} />
       <Route path="/admin/students" element={<Students />} />
+      <Route path="/admin/teachers" element={<Teachers />} />
 
       <Route
         path="/admin/teachers"

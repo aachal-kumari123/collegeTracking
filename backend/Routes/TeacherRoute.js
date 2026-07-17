@@ -9,15 +9,10 @@ const {
   deleteTeacher,
 } = require("../controllers/teacherController");
 
-const {
-  verifyToken,
-  isAdmin,
-} = require("../middleware/authMiddleware");
-
-router.post("/", verifyToken, isAdmin, addTeacher);
-router.get("/", verifyToken, isAdmin, getTeachers);
-router.get("/:id", verifyToken, isAdmin, getTeacherById);
-router.put("/:id", verifyToken, isAdmin, updateTeacher);
-router.delete("/:id", verifyToken, isAdmin, deleteTeacher);
+router.post("/", addTeacher);
+router.get("/", getTeachers);
+router.get("/:id", getTeacherById);
+router.put("/:id", updateTeacher);
+router.delete("/:id", deleteTeacher);
 
 module.exports = router;
