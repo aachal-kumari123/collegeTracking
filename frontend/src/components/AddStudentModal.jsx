@@ -1,5 +1,6 @@
 import { useState } from "react";
-import api from "../services/api";
+import api from "../services/Api";
+  import toast from "react-hot-toast";
 
 export default function AddStudentModal({
   isOpen,
